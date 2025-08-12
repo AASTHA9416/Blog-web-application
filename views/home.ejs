@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link
+     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+     rel="stylesheet"
+     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+     crossorigin="anonymous"
+   />
+   <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+  </head>
+  <body >
+
+    <%- include("partials/header.ejs") %>
+
+    <div id="blogs-home" class="container">
+     <h1>Here is Your all blogs topic List</h1>
+   <div>
+      <ul>
+        <li>
+          <div id="web" class="tech-stack">
+          <div id="web-dev-content tech-content"><a href="/web_development">Web Applications</a>: Software programs accessed through a
+          web browser, they allow users to interact with services and perform
+          tasks online without downloading software. Businesses use them to
+          connect with customers, sell products, and improve workflow.</div>
+          <div id="web-dev-image" class="tech-image">
+          <img src="../images/web-development-word-cloud-related-tags-52705109.webp" alt="A web development related image"></div>
+       </div> </li>
+        <li>
+          <hr>
+          <div id="cloud" class="tech-stack">
+            <div id="cloud-content tech-content">
+          <a href="/cloud">Cloud Computing</a>: Delivers on-demand computing
+          services (servers, storage, databases, networking, software, etc.)
+          over the internet. It allows individuals and businesses to access
+          computing resources as needed and pay only for what they use,
+          eliminating the need to buy and maintain physical data centers.</div>
+          <div id="cloud-image" class="tech-image">
+          <img src="../images/man-use-laptop-cloud-computing-600nw-2018729366.webp" alt="A cloud image"></div>
+      </div>  </li>
+      </ul>
+      </div>
+    </div>
+
+    
+    <%- include("partials/footer.ejs") %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  </html>

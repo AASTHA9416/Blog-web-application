@@ -1,0 +1,69 @@
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link
+     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+     rel="stylesheet"
+     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+     crossorigin="anonymous"
+   />
+ </head>
+ <body>
+    
+ 
+ <%- include("partials/header.ejs") %>
+<div class="container my-5">
+
+    <% if(locals.arr.length){ %> 
+
+        <h1 class="display-5 fw-bold border-bottom pb-3 mb-4">Your All Blogs</h1>
+
+        <% for(let i=arr.length-1; i>=0; i--){ %>
+            
+            <div class="card shadow-sm mb-4">
+                
+                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0"><%= arr[i].name %></h4>
+                    <div>
+                        <a href="/edit/<%=arr[i].id%>" class="btn btn-sm btn-outline-primary">Edit</a>
+                        <a href="/delete/<%=arr[i].id%>" class="btn btn-sm btn-outline-danger ms-2">Delete</a>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-3">
+                        <span class="badge bg-info text-dark"><%= arr[i].blogCategory %></span>
+                    </h6>
+                    <p class="card-text"><%= arr[i].blog %></p>
+                </div>
+
+                <div class="card-footer text-muted small">
+                    Post ID: <%= arr[i].id %>
+                </div>
+            </div>
+        <% } %>
+
+    <% } else{%>
+
+        <div class="text-center p-5 bg-light rounded-3">
+            <h1 class="display-4">You have no posts yet.</h1>
+            <p class="lead text-muted">Ready to share your thoughts with the world?</p>
+            <a href="/create_blog" class="btn btn-primary btn-lg mt-3">Create Your First Post</a>
+        </div>
+    <% } %>
+    <% if (locals.alertMessage) { %>
+    <script>
+        
+        alert('<%= alertMessage %>');
+        window.history.replaceState(null, '', '/your_blogs');
+    </script>
+<% } %>
+
+</div>
+    <%- include("partials/footer.ejs") %>
+</body>
+ </html>

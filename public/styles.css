@@ -1,0 +1,41 @@
+/* --- Default Styles (for Desktop) --- */
+.tech-stack {
+  display: flex;          /* Arrange items side-by-side */
+  align-items: center;    /* Vertically align them */
+  gap: 24px;              /* Space between text and image */
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.tech-content {
+  flex: 1;                /* Allows text to take up all available space */
+}
+
+.tech-image {
+  width: 300px;
+  flex-shrink: 0;         /* Prevents image from shrinking */
+}
+
+.tech-image img {
+  width: 100%;
+  height: auto;           /* Keeps the image aspect ratio perfect 👍 */
+  display: block;
+  border-radius: 8px;
+}
+
+/* --- Responsive Styles (for Mobile) --- */
+/* This code applies ONLY when the screen is 768px wide or less */
+@media (max-width: 768px) {
+  .tech-stack {
+    flex-direction: column; /* Stack items vertically instead of side-by-side */
+    align-items: flex-start;/* Align items to the start (left) */
+  }
+
+  .tech-image {
+    width: 100%;            /* Make the image take the full width of the screen */
+    margin-top: 16px;       /* Add some space above the image */
+  }
+  #blogs-home h1{
+    size: 0.5rem;
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link
+     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+     rel="stylesheet"
+     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+     crossorigin="anonymous"
+   />
+</head>
+<body>
+     <%- include("partials/header.ejs") %>
+   <div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="card-title text-center mb-4">Create a New Blog Post</h2>
+                    
+                    <form action="/create" method="post">
+                        <!-- Name Input -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Good Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        
+                        <!-- Blog Category Select -->
+                        <div class="mb-3">
+                            <label for="blogCategory" class="form-label">Your Blog Category</label>
+                            <select class="form-select" id="blogCategory" name="blogCategory">
+                                <option value="web">Web Applications</option>
+                                <option value="cloud">Cloud Computing</option>
+                            </select>
+                        </div>
+
+                        <!-- Blog Content Textarea -->
+                        <div class="mb-3">
+                            <label for="userBlog" class="form-label">Type your Blog here</label>
+                            <textarea class="form-control" id="userBlog" name="userBlog" maxlength="2000" rows="8"></textarea>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                             <input type="submit" name="submit" class="btn btn-primary btn-lg" value="Publish Post">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+        <%- include("partials/footer.ejs") %>
+</body>
+</html>

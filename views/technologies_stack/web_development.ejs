@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <div class="container pt-5 pb-4">
+      <h2 class="border-bottom pb-2 mb-4">All Blog Posts</h2>
+      <div class="list-group">
+        <% for (let i = arr.length-1; i >=0; i--) { %>
+        <div
+          
+          class="list-group-item  d-flex justify-content-between align-items-start"
+        >
+          <div class="ms-2 me-auto">
+            <div class="fw-bold fs-5"><%= arr[i].name %></div>
+            <p class="mb-0 text-muted"><%= arr[i].blog %></p>
+
+          </div>
+          <span class="badge bg-secondary rounded-pill"
+            ><%= arr[i].blogCategory %></span
+          >
+        </div>
+        <% } %>
+      </div>
+    </div>
+<main class="container py-5">
+    <header class="text-center mb-5">
+        <h1 class="display-4 fw-bold">A Deep Dive into Web Applications</h1>
+        <p class="lead text-muted">The Building Blocks of the Digital World</p>
+    </header>
+
+    <section class="mb-5">
+        <p class="fs-5">In today's digital landscape, web applications are everywhere. From social media platforms like Instagram and Twitter to productivity tools like Google Docs and Trello, they power our online interactions. Unlike traditional websites that are primarily static and informational, web applications are dynamic, interactive software programs that users access via a web browser. They're built to perform specific tasks, enabling a wide range of functions from booking a flight to managing a company's entire inventory.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="border-bottom pb-2 mb-4">The Anatomy of a Web Application: The Tech Stack</h2>
+        <p>The "tech stack" is the set of technologies used to build and run a web application. It's typically divided into two main parts: the frontend and the backend. Think of it like building a house: the frontend is the part the user sees and interacts with (the paint, windows, and doors), while the backend is the foundation, plumbing, and electrical system that makes the house functional.</p>
+
+        <div class="row mt-4">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title">Frontend (Client-Side)</h3>
+                        <p class="card-text">The frontend is what the user experiences in their browser. It's responsible for the UI and UX. Its core technologies are:</p>
+                        <ul>
+                            <li><strong>HTML:</strong> The basic structure and content of the page.</li>
+                            <li><strong>CSS:</strong> Styles the colors, fonts, and layout.</li>
+                            <li><strong>JavaScript:</strong> Makes the application interactive and dynamic.</li>
+                        </ul>
+                        <p>Modern developers often use frameworks like <strong>React</strong>, <strong>Angular</strong>, or <strong>Vue.js</strong> to build complex user interfaces more efficiently.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title">Backend (Server-Side)</h3>
+                        <p class="card-text">The backend is the "brains" of the application. It handles server logic, databases, and authentication. Key components include:</p>
+                        <ul>
+                            <li><strong>Programming Languages:</strong> Python, Node.js, Java, or Ruby.</li>
+                            <li><strong>Databases:</strong> SQL (e.g., MySQL) for structured data or NoSQL (e.g., MongoDB) for flexibility.</li>
+                            <li><strong>Web Servers:</strong> Software like Apache or Nginx to handle requests.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="border-bottom pb-2 mb-4">How Web Applications Work: A Simplified Process</h2>
+        <div class="list-group">
+            <div class="list-group-item"><strong>1. Request:</strong> A user opens their browser and types in a URL. The browser sends a request to the web server.</div>
+            <div class="list-group-item"><strong>2. Server-side Processing:</strong> The web server receives the request and communicates with the backend application, which may query the database.</div>
+            <div class="list-group-item"><strong>3. Data Retrieval/Manipulation:</strong> The database sends the requested information back to the backend application.</div>
+            <div class="list-group-item"><strong>4. Response Generation:</strong> The backend generates a response, typically as HTML, CSS, and JavaScript.</div>
+            <div class="list-group-item"><strong>5. Rendering:</strong> The web server sends this response back to the user's browser, which interprets the code and displays the final, interactive application.</div>
+        </div>
+    </section>
+</main> <%- include("../partials/footer.ejs") %>
+  </body>
+</html>
